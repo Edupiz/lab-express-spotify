@@ -67,3 +67,5 @@ app.get('/albums/:albumId/tracks', (req, res, next) => {
     })
     .catch(err => console.log('The error while searching tracks occurred: ', err));
 });
+
+app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
