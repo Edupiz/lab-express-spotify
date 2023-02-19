@@ -26,16 +26,16 @@ spotifyApi
     spotifyApi.setAccessToken(data.body.access_token);
 })
 .catch((error) =>
-console.log("Something went wrong  retrieving the access token", error)
+console.log("Something went wrong retrieving the access token", error)
 );
 
 
-// Our routes go here:
-app.get('/', (req, res) => {
+// Routes go here:
+app.get('/', (req, res, next) => {
     res.render('home');
 });
 
-app.get('/artist-search', (req, res) => {
+app.get('/artist-search', (req, res, next) => {
     const { artist } = req.query;
     spotifyApi
     .searchArtists(artist)
